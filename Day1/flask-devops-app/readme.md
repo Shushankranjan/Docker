@@ -1,36 +1,40 @@
-*What I built*
+What I Built
+The Application
 
- The Application:
+    A Flask web server that responds with "Hello, World!" on port 5000.
 
-    Flask web server that responds "Hello, World!" on port 5000
-    Health check endpoint at /health
+    Health check endpoint available at /health.
 
-The Container:
+The Container
 
-    Docker image containing Python + Flask + our app
-    Portable package that runs the same everywhere
+    A Docker image containing Python, Flask, and the application.
 
-Key Components:
-    app.py → Web application code
-    Dockerfile → Container build instructions 
-----------------------------------------------------
+    Portable and consistent environment that runs the app identically everywhere.
 
-*Commands used*
- docker build -t flask-devops-app .
- docker run -p 5000:5000 flask-devops-app
+Key Components
 
-----------------------------------------------------
+    app.py — Flask web application code.
 
-*Modifications tried*
-1.Change output message
-     	In app.py:
+    Dockerfile — Instructions to build the Docker container.
+
+Commands Used
+
+docker build -t flask-devops-app .
+docker run -p 5000:5000 flask-devops-app
+
+Modifications Tried
+
+    Change output message
+    In app.py:
+
 return "Shushank – 27 May 2025 – Dockerized"
-	
-2.Add a /health route
-	@app.route('/health')
+
+Add a /health route
+
+@app.route('/health')
 def health():
     return { "status": "ok" }
 
-3.Change Python version in Dockerfile to 3.10, rebuild, rerun.
+Change Python version in Dockerfile to 3.10, then rebuild and rerun.
 
-4.Run app on port 8080 instead of 5000 
+Run the app on port 8080 instead of 5000.
