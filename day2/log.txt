@@ -1,0 +1,3 @@
+User: shushank
+Uptime:  16:45:55 up  7:13,  1 user,  load average: 0.70, 0.30, 0.31
+
